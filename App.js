@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-mongoose.connect("mongodb+srv://Cluster14526:200096@cluster11643.wdcet3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster11643");
+mongoose.connect("mongodb+srv://Cluster14526:200096@cluster0.gknnvgf.mongodb.net/kanbas?retryWrites=true&w=majority&appName=Cluster0");
+//mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import Hello from "./Hello.js";
 import Lab5 from "./Lab5.js";
 import cors from "cors";
@@ -16,7 +17,7 @@ const app = express();
 app.use(
     cors({
       credentials: true,
-      origin: true//process.env.FRONTEND_URL
+      origin: true //process.env.FRONTEND_URL
 
     })
    );
