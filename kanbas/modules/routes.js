@@ -22,7 +22,7 @@ function ModuleRoutes(app) {
         const { mid } = req.params;
         
         //db.modules = db.modules.filter((m) => m._id !== mid);
-        const modules = await dao.deleteModule(mid);
+        const result = await dao.deleteModule(mid);
         res.sendStatus(200);
        
       });

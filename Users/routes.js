@@ -47,7 +47,7 @@ export default function UserRoutes(app) {
 
   const signin = async (req, res) => {
     const { username, password } = req.body;
-    currentUser = await dao.findUserByCredentials(username, password);
+    const currentUser = await dao.findUserByCredentials(username, password);
     if(currentUser){
         req.session["currentUser"] = currentUser;
         globalCurrentUser = currentUser;
@@ -59,7 +59,7 @@ res.sendStatus(401);
   };
 
   const signout = (req, res) => {
-    currentUser = null;
+    globalCurrentUser = null;
     res.sendStatus(200);
   };
 
@@ -75,7 +75,7 @@ res.sendStatus(401);
   const updateUser = async (req, res) => {
     const { userId } = req.params;
     const status = await dao.updateUser(userId, req.body);
-    currentUser = await dao.findUserById(userId);
+    const currentUser = await dao.findUserById(userId);
     res.json(status);
   };
 
