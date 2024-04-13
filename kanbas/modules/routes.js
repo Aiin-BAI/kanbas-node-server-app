@@ -1,6 +1,10 @@
 //import db from "../Database/index.js";
 import * as dao from "./dao.js";
 function ModuleRoutes(app) {
+  app.get("/api/modules", async (req, res) => {
+    const modules = await dao.findAllModules();
+    res.send(modules);
+  });
   app.post("/api/courses/:cid/modules", async (req, res) => {
     const { cid } = req.params;
 

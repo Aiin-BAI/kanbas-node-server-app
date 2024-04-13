@@ -8,3 +8,4 @@ export const createModule = (moduleData, cid) => {
 export const updateModule = (id, module) =>
   moduleModel.updateOne({ _id: id }, { $set: module });
 export const deleteModule = (id) => moduleModel.deleteOne({ _id: id });
+export const findAllModules = () => moduleModel.find();
