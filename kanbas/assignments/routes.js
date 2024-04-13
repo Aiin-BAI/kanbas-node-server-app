@@ -1,6 +1,10 @@
 //import Database from "../Database/index.js";
 import * as dao from "./dao.js";
 export default function AssignmentRoutes(app){
+  app.get("/api/assognments", async (req, res) => {
+    const assignments = await dao.findAllAssignments();
+    res.send(assignments);
+  });
     app.get("/api/assignments/:aid",async (req,res)=>{
         const { aid} = req.params;
         const assignment  = await dao.findAssignmentById(aid);//Database.assignments.find((a) => a._id === (aid));

@@ -9,3 +9,4 @@ export const createAssignment = (assignmentData, cid) => {
 export const updateAssignment = (id, assignment) =>
   assignmentModel.updateOne({ _id: id }, { $set: assignment });
 export const deleteAssignment = (id) => assignmentModel.deleteOne({ _id: id });
+export const findAllAssignments = () => assignmentModel.find();
